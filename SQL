@@ -1,0 +1,27 @@
+In this project, I demonstrate the use of SQL to review databases of log-in attempts and employees log.
+
+###Retrieve after hours failed login attempts
+SELECT * FROM log_in_attempts
+WHERE login_time > '18:00'
+AND success = 0;
+
+###Retrieve login attempts on specific dates
+SELECT * FROM log_in_attempts
+WHERE login_date BETWEEN '2024-02-12' AND '2024-02-14';
+
+###Retrieve login attempts outside of Mexico
+SELECT * FROM log_in_attempts
+WHERE NOT country LIKE 'Mex%';
+
+###Retrieve employees in Marketing
+SELECT employee_id, username FROM employees
+WHERE department = 'Marketing'
+AND office LIKE 'East%';
+
+###Retrieve employees in Finance or Sales
+SELECT employee_id username FROM employees
+WHERE department = 'Finance' OR department = 'Sales';
+
+###Retrieve all employees not in IT
+SELECT * FROM employees
+WHERE NOT department = 'IT';
