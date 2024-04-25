@@ -1,4 +1,4 @@
-Wirshark is a Network Protocol Analyzer used to open saved packet capture files, view high-level packet data, and filter files
+Wireshark is a Network Protocol Analyzer used to open saved packet capture files, view high-level packet data, and filter files
 to inspect detailed packet data. Here I demonstrate using filters to inspect packet data to sort through packet information efficiently.
 
 #To filter for a speific IP Address
