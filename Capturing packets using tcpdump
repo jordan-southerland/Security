@@ -1,0 +1,14 @@
+#identify interfaces available
+sudo ifconfig
+
+#identify interface options available for capture
+sudo tcpdump -D
+
+#capture live data using eth0 interface, use verbosity, count 5
+sudo tcpdump -i eth0 -v -c5
+
+#capture packet that contain data only from TCP port 80 without using names for IP adresses or ports, count 9 into a file called capture.pcap
+sudo tcpdump -i eth0 -nn -c9 port 80 -w capture.pcap &
+
+#filter packet header data from the captured file
+sudo tcpdump -nn -r capture.pcap -v
