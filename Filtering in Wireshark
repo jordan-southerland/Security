@@ -1,0 +1,23 @@
+Wirshark is a Network Protocol Analyzer used to open saved packet capture files, view high-level packet data, and use filters 
+to inspect detailed packet data. Here I demonstrate using filters to inspect packet data to sort through packet information efficiently.
+
+#To filter for a speific IP Address
+ip.addr == 142.250.1.139
+
+#To filter for an IP source
+ip.src == 142.250.1.139
+
+#To filter for and IP destination
+ip.dst == 142.250.1.139
+
+#To filter a specific MAC address
+eth.addr == 42:01:ac:15:e0:02
+
+#To filter for UDP port 53
+udp.port == 53
+
+#To filter for TCP port 80
+tcp.port == 80
+
+#To filter for TCP containing the phrase "curl"
+tcp contains "curl"
