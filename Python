@@ -16,3 +16,17 @@ for i in ip_addresses:
 	else:
 		print("IP address is not allowed")
 		break
+
+
+
+
+###This counts your login attempts and alerts a message that you are locked out after 3 failed attempts
+#define function to count login attempts
+def remaining_login_attempts(maximum_attempts, total_attempts):
+    return maximum_attempts - total_attempts
+
+remaining_attempts = remaining_login_attempts(3, 3)
+
+#If 3 failed attempts, output "Your account is locked"
+if remaining_attempts <= 0:
+    print("Your account is locked")
