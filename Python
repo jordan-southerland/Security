@@ -1,4 +1,5 @@
-###This evaluates a users IP address for access to log in###
+###This evaluates a users IP address for access to log in
+
 # Assign `allow_list` to a list of IP addresses that are allowed to log in
 allow_list = ["192.168.243.140", "192.168.205.12", "192.168.151.162", "192.168.178.71", 
               "192.168.86.232", "192.168.3.24", "192.168.170.243", "192.168.119.173"]
@@ -20,7 +21,9 @@ for i in ip_addresses:
 
 
 
+
 ###This counts your login attempts and alerts a message that you are locked out after 3 failed attempts
+
 #define function to count login attempts
 def remaining_login_attempts(maximum_attempts, total_attempts):
     return maximum_attempts - total_attempts
@@ -30,3 +33,39 @@ remaining_attempts = remaining_login_attempts(3, 3)
 #If 3 failed attempts, output "Your account is locked"
 if remaining_attempts <= 0:
     print("Your account is locked")
+
+
+
+
+
+###This will determine if a user is approved and if the device theyre using is the approved device
+
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+
+# Define a function named `login` that takes in two parameters, `username` and `device_id`
+def login(username, device_id):
+
+    # If `username` belongs to `approved_users`, then display "The user ______ is approved to access the system."    
+    if username in approved_users:
+        print("The user", username, "is approved to access the system.")
+
+        # assign `ind` to the index of `username` in `approved_users`,
+        ind = approved_users.index(username)
+
+        # and execute the following conditional
+        # If `device_id` matches the element at the index `ind` in `approved_devices`, then display "______ is the assigned device for ______"
+        if device_id == approved_devices[ind]:
+          print(device_id, "is the assigned device for", username)
+
+        # Otherwise, display "______ is not their assigned device"        
+	else:
+          print(device_id, "is not their assigned device.")
+
+    # Otherwise (part of the outer conditional and handles the case when `username` does not belong to `approved_users`),
+    # Display "The user ______ is not approved to access the system."    
+    else:
+        print("The username", username, "is not approved to access the system.")
