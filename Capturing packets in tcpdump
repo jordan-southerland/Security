@@ -1,3 +1,6 @@
+TCPDump is a command-line tool used for capturing and analyzing network traffic. Here I analyze pacekts to monitor activity.
+
+
 #identify interfaces available
 sudo ifconfig
 
